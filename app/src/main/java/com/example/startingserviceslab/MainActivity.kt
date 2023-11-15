@@ -2,6 +2,8 @@ package com.example.startingserviceslab
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 
 /*
 Create an application that contains one Activity and one Service. The service will be Started, not Bound.
@@ -16,5 +18,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val editText = findViewById<EditText>(R.id.editTextText)
+        findViewById<Button>(R.id.button).setOnClickListener{
+            startService()
+        }
     }
 }
+
