@@ -12,9 +12,8 @@ import kotlinx.coroutines.launch
 
 class TimerService : Service(){
     override fun onBind(p0: Intent?): IBinder? {
-
+        TODO()
     }
-
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         if(intent != null){
             runTimer(intent.getIntExtra("StartNumber", 10))
@@ -31,6 +30,11 @@ class TimerService : Service(){
                 delay(1000)
             }
         }
+        stopSelf()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 
 
